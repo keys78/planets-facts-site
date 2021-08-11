@@ -29,12 +29,12 @@ header{
 .holder{
     background: #070722;
     color:aliceblue;
-    height: calc(100vh);
+    height: calc(110vh);
 }
 
 .stars{
     position: absolute;
-    height: calc(100vh);
+    height: calc(110vh);
 }
 
 .image-display{
@@ -56,7 +56,7 @@ header{
 
 
 .info-display{
-    height: 22vh;
+    height: 18vh;
 }
 
 .wiki-links div{
@@ -79,7 +79,7 @@ header{
 
 
 
-button{
+.toggle button{
     margin-top: 10px;
     width: 100%;
     text-align:left;
@@ -87,6 +87,18 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 13px 0px;
     font-weight: 500;
+}
+
+.toggle-2{
+    text-align: center;
+    width: 100%;
+    /* padding: ; */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toggle-2 button {
+    padding: 15px 10px;
+    width: 30%;
 }
 
 span{
@@ -104,7 +116,7 @@ span{
 }
 
 .more-details div{
-    border: 1px solid aliceblue;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 12px 15px;
     width: 100%;;
 }
@@ -122,6 +134,17 @@ span{
 }
 
 @media screen and (max-width: 1024px) {
+    header{
+        height: 150px;
+        padding: 20px 0;
+    }
+    .logo{
+        margin-bottom: 20px;
+    }
+    .planet-list{
+        width: 95%;
+    }
+
     .image-display{
         height: auto;
     }
@@ -155,5 +178,43 @@ span{
     }
     .more-details{
         padding-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    header{
+        height: 85px;
+        padding: 0 16px;
+    }
+    .logo{
+        margin-bottom: 0px;
+        margin-top: 8px;
+    }
+
+    .hambuger{
+        margin-top: 11px;
+    }
+
+    .holder{
+        height: calc(150vh);
+    }
+    .stars{
+        height: calc(150vh);
+    }
+
+    .details h1{
+        text-align: center;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .more-details div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .more-details h2{
+        font-size: 14px;
     }
 }
