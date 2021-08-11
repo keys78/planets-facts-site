@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+
 
 body{
     color:aliceblue;
     background: #070722;
+}
+
+.signature{
+    font-family: 'MonteCarlo', cursive;
 }
 
 .antonio{
@@ -26,6 +32,10 @@ header{
     height: calc(100vh);
 }
 
+.stars{
+    position: absolute;
+    height: calc(100vh);
+}
 
 .image-display{
     height: 70vh;
@@ -109,4 +119,41 @@ span{
     font-size: 40px;
     font-weight: 600;
     font-family: 'Antonio', sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .image-display{
+        height: auto;
+    }
+    .details{
+        margin-top:250px;
+    }
+    .more-details h1{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .more-details h2{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .holder{
+        height: calc(115vh);
+    }
+    
+    .stars{
+        height: calc(110vh);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .holder{
+        height: calc(160vh);
+    }
+    
+    .stars{
+        height: calc(160vh);
+    }
+    .more-details{
+        padding-bottom: 20px;
+    }
 }

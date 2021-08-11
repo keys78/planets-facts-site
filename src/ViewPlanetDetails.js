@@ -32,22 +32,23 @@ const ViewPlanetDetails = _ => {
     }
 
     return (
-        <section className="holder">
-            <div className="w-11/12 mx-auto grid grid-cols-2 pt-16">
+        <section className="holder relative">
+            <img className="stars" src="/icons/background-stars.svg" />
+            <div className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-5">
                 <div>
                     <div className="w-9/12 max-w-3xl image-display mx-auto">
                         <img src={overview && '.' + `${state.planets.images.overview}`} />
                         <img src={structure && '.' + `${state.planets.images.structure}`} />
-                        {/* <div className="geo-holder"> */}
-                            <div className="overview-adjust">{geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
-                            <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
-                        {/* </div> */}
+
+                        <div className="overview-adjust">{geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
+                        <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
                     </div>
                 </div>
 
-                <div className="details">
-                    <div className="w-7/12 mx-auto">
 
+                <div className="lg:w-7/12 w-11/12 flex lg:flex-col flex-row justify-between mx-auto details">
+
+                    <div  className="lg:w-full w-6/12">
                         <h1>{state.planets.name}</h1>
                         <div className="info-display">
                             <p>{overview && state.planets.overview.content}</p>
@@ -56,20 +57,23 @@ const ViewPlanetDetails = _ => {
                         </div>
 
                         <div className="mt-0 mb-6 wiki-links">
-                            {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg"/> </div>}
-                            {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg"/> </div>}
-                            {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg"/> </div>}
+                            {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
+                            {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
+                            {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
                         </div>
+                    </div>
 
-                        <button onClick={overview_check}> <span>01</span> OVERVIEW</button><br></br>
-                        <button onClick={structure_check}><span>02</span> STRUCTURE</button> <br></br>
-                        <button onClick={geology_check}><span>03</span> GEOLOGY</button>
+                    <div className="lg:w-full w-4/12 lg:mt-0 mt-12">
+                        <button onClick={overview_check}> <span>01</span> OVERVIEW </button><br></br>
+                        <button onClick={structure_check}> <span>02</span> STRUCTURE </button> <br></br>
+                        <button onClick={geology_check}> <span>03</span> GEOLOGY </button>
                     </div>
                 </div>
 
+
             </div>
 
-            <div className="w-10/12 mx-auto mt-8 more-details flex gap-8">
+            <div className="w-10/12 mx-auto mt-8 more-details flex md:flex-row flex-col gap-4">
                 <div>
                     <h2>ROTATION TIME</h2>
                     <h1>{state.planets.rotation}</h1>
@@ -87,6 +91,7 @@ const ViewPlanetDetails = _ => {
                     <h1>{state.planets.temperature}</h1>
                 </div>
             </div>
+            <h6 class="absolute bottom-0 right-4  signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/arch-studio">Em_codes</a></h6>
         </section>
     );
 };

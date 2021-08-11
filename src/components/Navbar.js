@@ -12,7 +12,7 @@ const Home = () => {
       <div>
         <h1 className="text-3xl antonio">THE PLANETS</h1>
       </div>
-      <div className="flex justify-between gap-4 items-center">
+      <div className="flex justify-between gap-6 items-center">
         {planets.map((planet) => {
           return (
             <div key={planet.id}>
