@@ -22,8 +22,7 @@
 			"overview": "./images/planet-mercury.svg",
 			"structure": "./images/planet-mercury-internal.svg",
 			"geology": "./images/geology-mercury.png"
-		},
-		"url":"./images/planet-mercury-internal.svg"
+		}
 	},
 	{
 		"id":2,

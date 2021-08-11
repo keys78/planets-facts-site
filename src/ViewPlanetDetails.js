@@ -35,30 +35,40 @@ const ViewPlanetDetails = _ => {
         <section className="holder">
             <div className="w-11/12 mx-auto grid grid-cols-2 pt-16">
                 <div>
-                    <div className="w-9/12 image-display mx-auto">
+                    <div className="w-9/12 max-w-3xl image-display mx-auto">
                         <img src={overview && '.' + `${state.planets.images.overview}`} />
                         <img src={structure && '.' + `${state.planets.images.structure}`} />
-                        <div>
-                            {geology && <img src={'.' + `${state.planets.images.overview}`} />}
-                            {geology && <img src={'.' + `${state.planets.images.geology}`} />}
-                        </div>
+                        {/* <div className="geo-holder"> */}
+                            <div className="overview-adjust">{geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
+                            <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
+                        {/* </div> */}
                     </div>
                 </div>
 
                 <div className="details">
-                    <div className="border border-black p-5">
+                    <div className="w-7/12 mx-auto">
+
                         <h1>{state.planets.name}</h1>
-                        <h1>{overview && state.planets.overview.content}</h1>
-                        <h1>{structure && state.planets.structure.content}</h1>
-                        <h1>{geology && state.planets.geology.content}</h1>
+                        <div className="info-display">
+                            <p>{overview && state.planets.overview.content}</p>
+                            <p>{structure && state.planets.structure.content}</p>
+                            <p>{geology && state.planets.geology.content}</p>
+                        </div>
+
+                        <div className="mt-0 mb-6 wiki-links">
+                            {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg"/> </div>}
+                            {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg"/> </div>}
+                            {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg"/> </div>}
+                        </div>
+
+                        <button onClick={overview_check}> <span>01</span> OVERVIEW</button><br></br>
+                        <button onClick={structure_check}><span>02</span> STRUCTURE</button> <br></br>
+                        <button onClick={geology_check}><span>03</span> GEOLOGY</button>
                     </div>
-
-                    <button onClick={overview_check}>OVERVIEW</button>
-                    <button onClick={structure_check}>STRUCTURE</button>
-                    <button onClick={geology_check}>GEOLOGY</button>
-
                 </div>
+
             </div>
+
             <div className="w-10/12 mx-auto mt-8 more-details flex gap-8">
                 <div>
                     <h2>ROTATION TIME</h2>

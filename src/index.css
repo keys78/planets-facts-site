@@ -12,35 +12,85 @@ body{
     font-family: 'Antonio', sans-serif;
 }
 
+header{
+    background: #070722;
+    color:aliceblue;
+    height: 85px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .holder{
     background: #070722;
     color:aliceblue;
     height: calc(100vh);
 }
 
-.details > button{
-    background: black;
-    margin: 10px;
-    padding: 7px 10px;
-    color:white;
-    border-radius: 10px;
-}
-
-header{
-    background: #070722;
-    color:aliceblue;
-    height: 85px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgb(189, 182, 182);
-}
 
 .image-display{
     height: 70vh;
-    border: 1px solid white;
 }
 
-.more-details{
-    /* width: 100%; */
+.image-display img{
+    margin: auto;
+}
+
+
+.geo-adjust{
+    height: 26vh;
+}
+.geo-cont{
+    margin-top: -170px;
+}
+
+
+
+.info-display{
+    height: 22vh;
+}
+
+.wiki-links div{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.wiki-links p{
+    opacity: 0.5;
+}
+
+.wiki-links a{
+    opacity: 0.8;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+
+
+
+
+button{
+    margin-top: 10px;
+    width: 100%;
+    text-align:left;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 13px 0px;
+    font-weight: 500;
+}
+
+span{
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.6;
+    padding: 0 25px;
+}
+
+.details h1{
+    font-size: 45px;
+    font-weight: 600;
+    font-family: 'Antonio', sans-serif;
+    margin-bottom: 8px;
 }
 
 .more-details div{
