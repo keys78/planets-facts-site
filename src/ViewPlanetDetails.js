@@ -10,7 +10,6 @@ const ViewPlanetDetails = _ => {
     const [structure, setStructure] = useState(false)
     const [geology, setGeology] = useState(false)
 
-
     const overview_check = () => {
 
         setOverview(true)
