@@ -1,15 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400&display=swap');
 
+body{
+    color:aliceblue;
+    background: #070722;
+}
+
+.antonio{
+    font-family: 'Antonio', sans-serif;
+}
 
 .holder{
     background: #070722;
     color:aliceblue;
-    height: calc(100vh - 60px);
+    height: calc(100vh);
 }
 
-.holder > button{
+.details > button{
     background: black;
     margin: 10px;
     padding: 7px 10px;
@@ -20,5 +29,34 @@
 header{
     background: #070722;
     color:aliceblue;
-    height: 60px;
+    height: 85px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(189, 182, 182);
+}
+
+.image-display{
+    height: 70vh;
+    border: 1px solid white;
+}
+
+.more-details{
+    /* width: 100%; */
+}
+
+.more-details div{
+    border: 1px solid aliceblue;
+    padding: 12px 15px;
+    width: 100%;;
+}
+
+.more-details h2{
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.more-details h1{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Antonio', sans-serif;
 }

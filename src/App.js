@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import ViewUserDetails from "./ViewUserDetails";
+import ViewPlanetDetails from "./ViewPlanetDetails";
 import Home from "./Home";
 import Navbar from './components/Navbar'
 
@@ -14,8 +14,8 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/planets/:id">
-            <ViewUserDetails />
+          <Route path="/planets/:id">
+            <ViewPlanetDetails />
           </Route>
         </Switch>
       </div>
