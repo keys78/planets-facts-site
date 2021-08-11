@@ -35,7 +35,6 @@ const ViewPlanetDetails = _ => {
 
     return (
         <section className="holder relative">
-            <img className="stars" src="/icons/background-stars.svg" />
 
             <div className="toggle-2 sm:hidden block">
                 <button onClick={overview_check}> OVERVIEW </button>
@@ -65,7 +64,7 @@ const ViewPlanetDetails = _ => {
                             <p>{geology && state.planets.geology.content}</p>
                         </div>
 
-                        <div className="mb-6 wiki-links">
+                        <div className="sm:mt-0 mt-8 mb-6 wiki-links">
                             {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
                             {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
                             {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
@@ -100,7 +99,7 @@ const ViewPlanetDetails = _ => {
                     <h1>{state.planets.temperature}</h1>
                 </div>
             </div>
-            <h6 class="absolute bottom-0 right-4  signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
+            <h6 class="signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
         </section>
     );
 };

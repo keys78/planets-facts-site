@@ -36,7 +36,6 @@ const Home = () => {
                   }}
                 >
                   <h1 className="text-lg">{planet.name}</h1>
-                  <img src={planet.images.overview} />
                 </Link>
               </div>
             );
@@ -62,9 +61,12 @@ const Home = () => {
                       state: { planets: planet }
                     }}
                   >
-                    <div>
-                      <img className="w-5" src={`${planet.images.structure}`} />
-                      <h1 className="text-lg">{planet.name}</h1>
+                    <div className="side-clicks-holder flex justify-between items-center">
+                      <div className="side-clicks">
+                        <img className="w-5" src={`${planet.images.structure}`} />
+                        <h1 className="text-lg">{planet.name}</h1>
+                      </div>
+                      <img src="/Icons/icon-chevron.svg" alt="chevron" />
                     </div>
 
                   </Link>

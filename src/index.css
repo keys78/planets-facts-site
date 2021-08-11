@@ -34,17 +34,45 @@ header{
     background: #070722;
     height: 89vh;
     width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-clicks{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding: 12px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+.side-clicks-holder{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+.side-clicks img{
+    
 }
 
 .holder{
     background: #070722;
     color:aliceblue;
     height: calc(110vh);
+    z-index: -1;
 }
 
 .stars{
     position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
     height: calc(110vh);
+    z-index: 2;
 }
 
 .image-display{
@@ -104,6 +132,7 @@ header{
     width: 100%;
     /* padding: ; */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index:1;
 }
 
 .toggle-2 button {
