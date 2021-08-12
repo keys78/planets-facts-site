@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-// import mercury from './images/planet-mercury'
+import { motion } from "framer-motion";
 
 const ViewPlanetDetails = _ => {
     const { state } = useLocation();
@@ -15,7 +15,6 @@ const ViewPlanetDetails = _ => {
         setOverview(true)
         setStructure(false)
         setGeology(false)
-        console.log('overview')
     }
 
     const structure_check = () => {
@@ -23,33 +22,61 @@ const ViewPlanetDetails = _ => {
         setOverview(false)
         setStructure(true)
         setGeology(false)
-        console.log('sters')
+
     }
     const geology_check = () => {
 
         setOverview(false)
         setStructure(false)
         setGeology(true)
-        console.log('geology')
+
     }
 
+    const container = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.2
+          }
+        }
+      };
+      
+      const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1
+        }
+      };
+
     return (
-        <section className="holder relative">
+        <motion.section
+            initial={{ x: '100vw' }}
+            animate={{ x: 0 }}
+            transition={{ type:'spring', delay: 0.5 }}
+            className="holder relative">
+            <img className="stars" src="/icons/background-stars.svg" alt="start" />
 
             <div className="toggle-2 sm:hidden block">
                 <button onClick={overview_check}> OVERVIEW </button>
-                <button onClick={structure_check}>  STRUCTURE </button> 
+                <button onClick={structure_check}>  STRUCTURE </button>
                 <button onClick={geology_check}> SURFACE </button>
             </div>
 
-            <div className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
+            <div className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
                 <div>
-                    <div className="w-9/12 max-w-3xl image-display mx-auto">
+                    <div
+                    className="w-9/12 max-w-3xl image-display mx-auto">
                         <img src={overview && '.' + `${state.planets.images.overview}`} />
                         <img src={structure && '.' + `${state.planets.images.structure}`} />
 
-                        <div className="overview-adjust">{geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
-                        <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
+                        <div className="test">
+                            <div >{geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
+                            <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
+                        </div>
                     </div>
                 </div>
 
@@ -58,13 +85,17 @@ const ViewPlanetDetails = _ => {
 
                     <div className="lg:w-full sm:w-6/12 w-full">
                         <h1>{state.planets.name}</h1>
-                        <div className="info-display">
+                        <motion.div
+                            initial={{ opacity: 0, x: 200 }}
+                            animate={{ opacity: 1, x: 0}}
+                            transition={{ duration: 1 }}
+                            className="info-display">
                             <p>{overview && state.planets.overview.content}</p>
                             <p>{structure && state.planets.structure.content}</p>
                             <p>{geology && state.planets.geology.content}</p>
-                        </div>
+                        </motion.div>
 
-                        <div className="sm:mt-0 mt-8 mb-6 wiki-links">
+                        <div className="sm:mt-0 mt-12 mb-6 wiki-links">
                             {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
                             {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
                             {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
@@ -99,8 +130,8 @@ const ViewPlanetDetails = _ => {
                     <h1>{state.planets.temperature}</h1>
                 </div>
             </div>
-            <h6 class="signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
-        </section>
+            <h6 class="absolute bottom-0 right-4  signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
+        </motion.section>
     );
 };
 

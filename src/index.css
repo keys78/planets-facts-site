@@ -55,24 +55,18 @@ header{
 
 }
 
-.side-clicks img{
-    
-}
-
 .holder{
     background: #070722;
     color:aliceblue;
     height: calc(110vh);
-    z-index: -1;
+    z-index: 0;
 }
 
 .stars{
     position: absolute;
-    top:0;
-    right:0;
-    width: 100%;
     height: calc(110vh);
-    z-index: 2;
+    width: 100%;
+    z-index: -1;
 }
 
 .image-display{
@@ -83,15 +77,12 @@ header{
     margin: auto;
 }
 
-
 .geo-adjust{
     height: 26vh;
 }
 .geo-cont{
     margin-top: -170px;
 }
-
-
 
 .info-display{
     height: 18vh;
@@ -130,9 +121,8 @@ header{
 .toggle-2{
     text-align: center;
     width: 100%;
-    /* padding: ; */
+    z-index: 99;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index:1;
 }
 
 .toggle-2 button {
@@ -183,6 +173,10 @@ span{
     .planet-list{
         width: 95%;
     }
+
+    .test{
+        margin-bottom: -220px;
+    }    
 
     .image-display{
         height: auto;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { planetData } from "../data";
 import planets from "../data/data.json"
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [showBar, setShowBar] = useState(null)
@@ -35,7 +36,10 @@ const Home = () => {
                     state: { planets: planet }
                   }}
                 >
-                  <h1 className="text-lg">{planet.name}</h1>
+                  <motion.h1 
+                  whileHover={{ scale: 1.3 }}
+                  transiton={{ type:'spring', stifness: 300 }}
+                  className="text-lg">{planet.name}</motion.h1>
                 </Link>
               </div>
             );
@@ -63,8 +67,11 @@ const Home = () => {
                   >
                     <div className="side-clicks-holder flex justify-between items-center">
                       <div className="side-clicks">
-                        <img className="w-5" src={`${planet.images.structure}`} />
-                        <h1 className="text-lg">{planet.name}</h1>
+                        <img className="w-5" src={`${planet.images.structure}`} alt="planets"/>
+                        <motion.h1
+                        whileHover={{ scale: 1.3 }}
+                        transiton={{ type:'spring', stifness: 300 }}
+                        className="text-lg">{planet.name}</motion.h1>
                       </div>
                       <img src="/Icons/icon-chevron.svg" alt="chevron" />
                     </div>
