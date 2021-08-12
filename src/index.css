@@ -10,6 +10,16 @@ body{
     background: #070722;
 }
 
+a h1{
+    border-top: 2px solid transparent;
+    transition: linear 0.3s;
+}
+
+.active h1{
+    border-top: 3px solid rgb(248, 2, 2);
+    transition: linear 0.3s;
+}
+
 .signature{
     font-family: 'MonteCarlo', cursive;
 }
@@ -250,11 +260,4 @@ span{
     .more-details h2{
         font-size: 14px;
     }
-
-    /* .sidebar{
-        position: absolute;
-        background: #070722;
-        height: screen;
-        width: 100%;
-    } */
 }

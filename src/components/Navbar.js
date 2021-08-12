@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 // import { planetData } from "../data";
 import planets from "../data/data.json"
 import { useState } from "react";
@@ -12,7 +12,6 @@ const Home = () => {
     !showBar ? setShowBar(true) : setShowBar(false)
 
   }
-
   const closeNav = () => {
     setShowBar(false)
 
@@ -29,18 +28,17 @@ const Home = () => {
           {planets.map((planet) => {
             return (
               <div key={planet.id}>
-                <Link
-
+                <NavLink
                   to={{
                     pathname: `/planets/${planet.name}`,
                     state: { planets: planet }
                   }}
                 >
                   <motion.h1 
-                  whileHover={{ scale: 1.3 }}
+                  whileHover={{ scale: 1.2 }}
                   transiton={{ type:'spring', stifness: 300 }}
                   className="text-lg">{planet.name}</motion.h1>
-                </Link>
+                </NavLink>
               </div>
             );
           })}
@@ -53,7 +51,12 @@ const Home = () => {
       </div>
 
       {showBar &&
-        <div className="sidebar sm:hidden block">
+        <motion.div
+        initial={{ x: '100vh' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100vh'}}
+            transition={{ delay: 0.0 }}
+        className="sidebar sm:hidden block">
           <div>
             {planets.map((planet) => {
               return (
@@ -81,7 +84,7 @@ const Home = () => {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       }
 
     </header>

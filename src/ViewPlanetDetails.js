@@ -32,32 +32,9 @@ const ViewPlanetDetails = _ => {
 
     }
 
-    const container = {
-        hidden: { opacity: 1, scale: 0 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.2
-          }
-        }
-      };
-      
-      const item = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-          y: 0,
-          opacity: 1
-        }
-      };
 
     return (
-        <motion.section
-            initial={{ x: '100vw' }}
-            animate={{ x: 0 }}
-            transition={{ type:'spring', delay: 0.5 }}
-            className="holder relative">
+        <section className="holder relative">
             <img className="stars" src="/icons/background-stars.svg" alt="start" />
 
             <div className="toggle-2 sm:hidden block">
@@ -66,10 +43,13 @@ const ViewPlanetDetails = _ => {
                 <button onClick={geology_check}> SURFACE </button>
             </div>
 
-            <div className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
+            <motion.div
+            initial={{ y: '100vh' }}
+            animate={{ y: 0 }}
+            transition={{ type:'spring', delay: 0.5 }}
+            className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
                 <div>
-                    <div
-                    className="w-9/12 max-w-3xl image-display mx-auto">
+                    <div className="w-9/12 max-w-3xl image-display mx-auto">
                         <img src={overview && '.' + `${state.planets.images.overview}`} />
                         <img src={structure && '.' + `${state.planets.images.structure}`} />
 
@@ -110,9 +90,13 @@ const ViewPlanetDetails = _ => {
                 </div>
 
 
-            </div>
+            </motion.div>
 
-            <div className="w-10/12 mx-auto mt-8 more-details flex md:flex-row flex-col gap-4">
+            <motion.div
+            initial={{ x: '100vw' }}
+            animate={{ x: 0 }}
+            transition={{ type:'spring', delay: 0.5 }}
+            className="w-10/12 mx-auto mt-8 more-details flex md:flex-row flex-col gap-4">
                 <div>
                     <h2>ROTATION TIME</h2>
                     <h1>{state.planets.rotation}</h1>
@@ -129,9 +113,9 @@ const ViewPlanetDetails = _ => {
                     <h2>AVERAGE TEMP.</h2>
                     <h1>{state.planets.temperature}</h1>
                 </div>
-            </div>
+            </motion.div>
             <h6 class="absolute bottom-0 right-4  signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
-        </motion.section>
+        </section>
     );
 };
 
