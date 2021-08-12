@@ -10,6 +10,14 @@ body{
     background: #070722;
 }
 
+.boro{
+    background-color: red;
+}
+
+.vt{
+    background: transparent;
+}
+
 a h1{
     border-top: 2px solid transparent;
     transition: linear 0.3s;
@@ -126,6 +134,10 @@ header{
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 13px 0px;
     font-weight: 500;
+}
+
+.toggle button:active{
+    background: green;
 }
 
 .toggle-2{

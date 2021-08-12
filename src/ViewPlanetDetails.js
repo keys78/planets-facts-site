@@ -15,6 +15,7 @@ const ViewPlanetDetails = _ => {
         setOverview(true)
         setStructure(false)
         setGeology(false)
+        
     }
 
     const structure_check = () => {
@@ -76,16 +77,16 @@ const ViewPlanetDetails = _ => {
                         </motion.div>
 
                         <div className="sm:mt-0 mt-12 mb-6 wiki-links">
-                            {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
-                            {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
-                            {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" /> </div>}
+                            {overview && <div> <p>Source: <a href={state.planets.overview.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" alt="source" /> </div>}
+                            {structure && <div> <p>Source: <a href={state.planets.structure.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" alt="source" /> </div>}
+                            {geology && <div> <p>Source: <a href={state.planets.geology.source}>Wikipedia</a></p><img src="/icons/icon-source.svg" alt="source" /> </div>}
                         </div>
                     </div>
 
                     <div className="toggle lg:w-full w-6/12 lg:mt-0 mt-12 sm:block hidden">
-                        <button onClick={overview_check}> <span>01</span> OVERVIEW </button><br></br>
-                        <button onClick={structure_check}> <span>02</span> INTERNAL STRUCTURE </button> <br></br>
-                        <button onClick={geology_check}> <span>03</span> SURFACE GEOLOGY </button>
+                        <motion.button whileHover={{ scale: 0.97, backgroundColor: "rgba(255, 0, 0, 0.274)" }}transiton={{ type:'spring', stifness: 300 }} onClick={overview_check}> <span>01</span> OVERVIEW </motion.button><br></br>
+                        <motion.button whileHover={{ scale: 0.97, backgroundColor: "rgba(255, 0, 0, 0.274)" }}transiton={{ type:'spring', stifness: 300 }} onClick={structure_check}> <span>02</span> INTERNAL STRUCTURE </motion.button> <br></br>
+                        <motion.button whileHover={{ scale: 0.97, backgroundColor: "rgba(255, 0, 0, 0.274)" }}transiton={{ type:'spring', stifness: 300 }} onClick={geology_check}> <span>03</span> SURFACE GEOLOGY </motion.button>
                     </div>
                 </div>
 

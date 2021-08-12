@@ -5,6 +5,12 @@ const Home = () => {
   return (
     <div>
         <img className="mx-auto" src="https://media1.giphy.com/media/3ohhwsupwJyzktdgS4/giphy.gif" alt="wds" />
+
+        <div className="w-full mx-auto">
+            <div className="lg:w-4/12 md:w-6/12 sm:w-8/12 w-11/12 mx-auto text-lg font-semibold opacity-70 text-center">
+                <h1>Hi CHAMP, You found me. Welp, checkout these beauties dancing around me. You're Welcome &#129488; </h1>
+            </div>
+        </div>
     </div>
   );
 };
