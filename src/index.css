@@ -23,12 +23,12 @@ a h1{
     transition: linear 0.3s;
 }
 
-/* .active h1{
+.active h1{
     border-top: 3px solid rgb(248, 2, 2);
     transition: linear 0.3s;
-} */
+}
 
-.robo .active h1{
+/* .robo .active h1{
     color: green;
 }
 
@@ -36,12 +36,9 @@ a h1{
     color:rgb(6, 252, 227)
 }
 
-.herma h1{
-    color:rgb(6, 252, 227)
-}
 .hera h1{
     color:rgb(252, 6, 240)
-}
+} */
 
 .signature{
     font-family: 'MonteCarlo', cursive;
@@ -55,17 +52,20 @@ header{
     background: #070722;
     color:aliceblue;
     height: 85px;
-    padding: 10px 0;
+    width: 100%;
+    /* padding: 10px 0; */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidebar{
     z-index: 9;
-    position: absolute;
+    margin-top:25px;
+    /* position: absolute;
     bottom:0;
-    left:0;
+    left:0; */
     background: #070722;
-    height: 89vh;
+    /* background: #acaceb; */
+    height: 100vh;
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -74,7 +74,7 @@ header{
     display: flex;
     align-items: center;
     gap:10px;
-    padding: 12px 8px;
+    padding: 3px 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
 }
@@ -172,7 +172,7 @@ header{
 
 .toggle-2 button {
     padding: 15px 10px;
-    width: 30%;
+    width: 33.33%;
 }
 
 span{

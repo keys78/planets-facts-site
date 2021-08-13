@@ -29,8 +29,11 @@ const Home = () => {
             return (
               <div key={planet.id}>
                 <NavLink
-                  className={
-                planet.name === 'Mercury' && 'herma'}
+              //     className={
+              //   "active" && planet.name === 'Mercury' ? '' : 'hera',
+              //   "active" && planet.name === 'Venus' ? '' : 'herma'
+              
+              // }
                   to={{
                     pathname: `/planets/${planet.name}`,
                     state: { planets: planet }
@@ -94,9 +97,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// className={
-                // planet.name === 'Mercury' && 'herma'
-              // planet.name === 'Venus' ? 'hera' : ''
-              // planet.name === 'Mercury' ? console.log('yes') : console.log('no')
-            // }
