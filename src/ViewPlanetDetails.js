@@ -11,7 +11,6 @@ const ViewPlanetDetails = _ => {
     const [geology, setGeology] = useState(false)
 
     const overview_check = () => {
-
         setOverview(true)
         setStructure(false)
         setGeology(false)
@@ -39,9 +38,9 @@ const ViewPlanetDetails = _ => {
             <img className="stars" src="/icons/background-stars.svg" alt="start" />
 
             <div className="toggle-2 sm:hidden block">
-                <button onClick={overview_check}> OVERVIEW </button>
-                <button onClick={structure_check}>  STRUCTURE </button>
-                <button onClick={geology_check}> SURFACE </button>
+                <button className={ overview && "newBg"} onClick={overview_check}> OVERVIEW </button>
+                <button className={ structure && "newBg"} onClick={structure_check}>  STRUCTURE </button>
+                <button className={ geology && "newBg"} onClick={geology_check}> SURFACE </button>
             </div>
 
             <motion.div
@@ -84,9 +83,9 @@ const ViewPlanetDetails = _ => {
                     </div>
 
                     <div className="toggle lg:w-full w-6/12 lg:mt-0 mt-12 sm:block hidden">
-                        <motion.button whileHover={{ scale: 0.97, backgroundColor: "rgba(255, 0, 0, 0.274)" }}transiton={{ type:'spring', stifness: 300 }} onClick={overview_check}> <span>01</span> OVERVIEW </motion.button><br></br>
-                        <motion.button whileHover={{ scale: 0.97, backgroundColor: "rgba(255, 0, 0, 0.274)" }}transiton={{ type:'spring', stifness: 300 }} onClick={structure_check}> <span>02</span> INTERNAL STRUCTURE </motion.button> <br></br>
-                        <motion.button whileHover={{ scale: 0.97, backgroundColor: "rgba(255, 0, 0, 0.274)" }}transiton={{ type:'spring', stifness: 300 }} onClick={geology_check}> <span>03</span> SURFACE GEOLOGY </motion.button>
+                        <motion.button className={ overview && "newBg"} whileHover={{ scale: 0.97 }}transiton={{ type:'spring', stifness: 300 }} className={ overview && "newBg"} onClick={overview_check}> <span>01</span> OVERVIEW </motion.button><br></br>
+                        <motion.button className={ structure && "newBg"} whileHover={{ scale: 0.97 }}transiton={{ type:'spring', stifness: 300 }} onClick={structure_check}> <span>02</span> INTERNAL STRUCTURE </motion.button> <br></br>
+                        <motion.button className={ geology && "newBg"} whileHover={{ scale: 0.97 }}transiton={{ type:'spring', stifness: 300 }} onClick={geology_check}> <span>03</span> SURFACE GEOLOGY </motion.button>
                     </div>
                 </div>
 

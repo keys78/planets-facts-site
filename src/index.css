@@ -23,9 +23,24 @@ a h1{
     transition: linear 0.3s;
 }
 
-.active h1{
+/* .active h1{
     border-top: 3px solid rgb(248, 2, 2);
     transition: linear 0.3s;
+} */
+
+.robo .active h1{
+    color: green;
+}
+
+.herma h1{
+    color:rgb(6, 252, 227)
+}
+
+.herma h1{
+    color:rgb(6, 252, 227)
+}
+.hera h1{
+    color:rgb(252, 6, 240)
 }
 
 .signature{
@@ -46,7 +61,7 @@ header{
 
 .sidebar{
     z-index: 9;
-    position: fixed;
+    position: absolute;
     bottom:0;
     left:0;
     background: #070722;
@@ -134,10 +149,18 @@ header{
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 13px 0px;
     font-weight: 500;
+    transition: background linear 0.3s;
 }
 
-.toggle button:active{
-    background: green;
+
+.toggle .newBg{
+    background: rgb(129, 13, 13);
+    transition: background linear 0.3s;
+}
+
+.toggle-2 .newBg{
+    background: rgb(129, 13, 13);
+    transition: background linear 0.3s;
 }
 
 .toggle-2{

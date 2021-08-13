@@ -1,5 +1,5 @@
 import React from "react";
-import { Link,NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import { planetData } from "../data";
 import planets from "../data/data.json"
 import { useState } from "react";
@@ -29,15 +29,17 @@ const Home = () => {
             return (
               <div key={planet.id}>
                 <NavLink
+                  className={
+                planet.name === 'Mercury' && 'herma'}
                   to={{
                     pathname: `/planets/${planet.name}`,
                     state: { planets: planet }
                   }}
                 >
-                  <motion.h1 
-                  whileHover={{ scale: 1.2 }}
-                  transiton={{ type:'spring', stifness: 300 }}
-                  className="text-lg">{planet.name}</motion.h1>
+                  <motion.h1
+                    whileHover={{ scale: 1.2 }}
+                    transiton={{ type: 'spring', stifness: 300 }}
+                    className="text-lg">{planet.name}</motion.h1>
                 </NavLink>
               </div>
             );
@@ -52,11 +54,11 @@ const Home = () => {
 
       {showBar &&
         <motion.div
-        initial={{ x: '100vh' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100vh'}}
-            transition={{ delay: 0.0 }}
-        className="sidebar sm:hidden block">
+          initial={{ x: '100vh' }}
+          animate={{ x: 0 }}
+          exit={{ x: '100vh' }}
+          transition={{ delay: 0.0 }}
+          className="sidebar sm:hidden block">
           <div>
             {planets.map((planet) => {
               return (
@@ -70,11 +72,11 @@ const Home = () => {
                   >
                     <div className="side-clicks-holder flex justify-between items-center">
                       <div className="side-clicks">
-                        <img className="w-5" src={`${planet.images.structure}`} alt="planets"/>
+                        <img className="w-5" src={`${planet.images.structure}`} alt="planets" />
                         <motion.h1
-                        whileHover={{ scale: 1.3 }}
-                        transiton={{ type:'spring', stifness: 300 }}
-                        className="text-lg">{planet.name}</motion.h1>
+                          whileHover={{ scale: 1.3 }}
+                          transiton={{ type: 'spring', stifness: 300 }}
+                          className="text-lg">{planet.name}</motion.h1>
                       </div>
                       <img src="/Icons/icon-chevron.svg" alt="chevron" />
                     </div>
@@ -92,3 +94,9 @@ const Home = () => {
 };
 
 export default Home;
+
+// className={
+                // planet.name === 'Mercury' && 'herma'
+              // planet.name === 'Venus' ? 'hera' : ''
+              // planet.name === 'Mercury' ? console.log('yes') : console.log('no')
+            // }
