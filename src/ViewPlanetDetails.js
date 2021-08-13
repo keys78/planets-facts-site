@@ -46,7 +46,7 @@ const ViewPlanetDetails = _ => {
             <motion.div
             initial={{ y: '100vh' }}
             animate={{ y: 0 }}
-            transition={{ type:'spring', delay: 0.5 }}
+            transition={{ duration: 1 }}
             className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
                 <div>
                     <div className="w-9/12 max-w-3xl image-display mx-auto">
