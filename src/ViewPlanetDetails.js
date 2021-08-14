@@ -14,7 +14,7 @@ const ViewPlanetDetails = _ => {
         setOverview(true)
         setStructure(false)
         setGeology(false)
-        
+
     }
 
     const structure_check = () => {
@@ -38,22 +38,22 @@ const ViewPlanetDetails = _ => {
             <img className="stars" src="/icons/background-stars.svg" alt="start" />
 
             <div className="toggle-2 sm:hidden block">
-                <button className={ overview && "newBg"} onClick={overview_check}> OVERVIEW </button>
-                <button className={ structure && "newBg"} onClick={structure_check}>  STRUCTURE </button>
-                <button className={ geology && "newBg"} onClick={geology_check}> SURFACE </button>
+                <button className={overview && "newBg"} onClick={overview_check}> OVERVIEW </button>
+                <button className={structure && "newBg"} onClick={structure_check}>  STRUCTURE </button>
+                <button className={geology && "newBg"} onClick={geology_check}> SURFACE </button>
             </div>
 
             <motion.div
-            initial={{ y: '100vh' }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1 }}
-            className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
+                initial={{ y: '100vh' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1 }}
+                className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
                 <div>
                     <div className="w-9/12 max-w-3xl image-display mx-auto">
-                        <img className={ !overview && "hidden-class"} src={overview && '.' + `${state.planets.images.overview}`} />
-                        <img className={ !structure && "hidden-class"} src={structure && '.' + `${state.planets.images.structure}`} />
+                        <img className={!overview && "hidden-class"} src={overview && '.' + `${state.planets.images.overview}`} />
+                        <img className={!structure && "hidden-class"} src={structure && '.' + `${state.planets.images.structure}`} />
 
-                        <div className={ !geology && "hidden-class"} className="test">
+                        <div className={!geology && "hidden-class"} className="test">
                             <div> {geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
                             <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
                         </div>
@@ -67,7 +67,7 @@ const ViewPlanetDetails = _ => {
                         <h1>{state.planets.name}</h1>
                         <motion.div
                             initial={{ opacity: 0, x: 200 }}
-                            animate={{ opacity: 1, x: 0}}
+                            animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1 }}
                             className="info-display">
                             <p>{overview && state.planets.overview.content}</p>
@@ -83,9 +83,9 @@ const ViewPlanetDetails = _ => {
                     </div>
 
                     <div className="toggle lg:w-full w-6/12 lg:mt-0 mt-12 sm:block hidden">
-                        <motion.button className={ overview && "newBg"} whileHover={{ scale: 0.97 }}transiton={{ type:'spring', stifness: 300 }} className={ overview && "newBg"} onClick={overview_check}> <span>01</span> OVERVIEW </motion.button><br></br>
-                        <motion.button className={ structure && "newBg"} whileHover={{ scale: 0.97 }}transiton={{ type:'spring', stifness: 300 }} onClick={structure_check}> <span>02</span> INTERNAL STRUCTURE </motion.button> <br></br>
-                        <motion.button className={ geology && "newBg"} whileHover={{ scale: 0.97 }}transiton={{ type:'spring', stifness: 300 }} onClick={geology_check}> <span>03</span> SURFACE GEOLOGY </motion.button>
+                        <motion.button className={overview && "newBg"} whileHover={{ scale: 0.97 }} transiton={{ type: 'spring', stifness: 300 }} className={overview && "newBg"} onClick={overview_check}> <span>01</span> OVERVIEW </motion.button><br></br>
+                        <motion.button className={structure && "newBg"} whileHover={{ scale: 0.97 }} transiton={{ type: 'spring', stifness: 300 }} onClick={structure_check}> <span>02</span> INTERNAL STRUCTURE </motion.button> <br></br>
+                        <motion.button className={geology && "newBg"} whileHover={{ scale: 0.97 }} transiton={{ type: 'spring', stifness: 300 }} onClick={geology_check}> <span>03</span> SURFACE GEOLOGY </motion.button>
                     </div>
                 </div>
 
@@ -93,10 +93,10 @@ const ViewPlanetDetails = _ => {
             </motion.div>
 
             <motion.div
-            initial={{ x: '100vw' }}
-            animate={{ x: 0 }}
-            transition={{ type:'spring', delay: 0.5 }}
-            className="w-10/12 mx-auto mt-8 more-details flex md:flex-row flex-col gap-4">
+                initial={{ x: '100vw' }}
+                animate={{ x: 0 }}
+                transition={{ type: 'spring', delay: 0.5 }}
+                className="w-10/12 mx-auto mt-8 more-details flex md:flex-row flex-col gap-4">
                 <div>
                     <h2>ROTATION TIME</h2>
                     <h1>{state.planets.rotation}</h1>
@@ -114,7 +114,7 @@ const ViewPlanetDetails = _ => {
                     <h1>{state.planets.temperature}</h1>
                 </div>
             </motion.div>
-            <h6 class="absolute bottom-0 right-4  signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
+            <h6 class="absolute -bottom-6 right-4 signature text-grey-400 text-lg font-medium text-right">| Coded by <a class="text-green-600" href="https://github.com/Em-codes/planets-facts-site">Em_codes</a></h6>
         </section>
     );
 };

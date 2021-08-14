@@ -279,7 +279,8 @@ span{
     }
 
     .holder{
-        height: calc(150vh);
+        height: fit-content;
+        /* height: calc(150vh); */
     }
     .stars{
         height: calc(150vh);
