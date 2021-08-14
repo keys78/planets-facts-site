@@ -18,6 +18,10 @@ body{
     background: transparent;
 }
 
+.hidden-class{
+    display: none;
+}
+
 a h1{
     border-top: 2px solid transparent;
     transition: linear 0.3s;

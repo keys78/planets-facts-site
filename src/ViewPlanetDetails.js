@@ -50,11 +50,11 @@ const ViewPlanetDetails = _ => {
             className="nelo w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 lg:pt-16 pt-10">
                 <div>
                     <div className="w-9/12 max-w-3xl image-display mx-auto">
-                        <img src={overview && '.' + `${state.planets.images.overview}`} />
-                        <img src={structure && '.' + `${state.planets.images.structure}`} />
+                        <img className={ !overview && "hidden-class"} src={overview && '.' + `${state.planets.images.overview}`} />
+                        <img className={ !structure && "hidden-class"} src={structure && '.' + `${state.planets.images.structure}`} />
 
-                        <div className="test">
-                            <div >{geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
+                        <div className={ !geology && "hidden-class"} className="test">
+                            <div> {geology && <img src={'.' + `${state.planets.images.overview}`} />}</div>
                             <div className="geo-cont">{geology && <img className="geo-adjust" src={'.' + `${state.planets.images.geology}`} />}</div>
                         </div>
                     </div>
